@@ -1,0 +1,3 @@
+[submodule "src/wase-physics-docs"]
+	path = src/wase-physics-docs
+	url = https://github.com/Wase-Physics/wase-physics-docs

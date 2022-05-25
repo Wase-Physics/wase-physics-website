@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Wase Physics</title>
+
+    <!-- Meta tags -->
+    <meta name="description" content="Wase Physics is an open source physics engine made with C++.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+
+    <!-- Styling -->
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+</head>
+<body>
+<div class="container">
+
+    <!-- Wase Physics logo in the center -->
+    <div class="center">
+        <a href="{{ path('index') }}">
+            <img src="{{ asset('img/logo.png') }}" alt="Wase Physics logo" id="logo">
+        </a>
+    </div>
+
+    <!-- Page content -->
+    <div class="card">
+
+        {% block body %}{% endblock %}
+
+    </div>
+
+</div>
+
+</body>
+</html>
