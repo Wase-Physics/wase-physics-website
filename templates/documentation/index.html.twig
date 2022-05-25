@@ -1,0 +1,28 @@
+{% extends 'base/base.html.twig' %}
+
+{% block title %}Documentation{% endblock %}
+
+{% block body %}
+
+    <h1>Documentation</h1>
+
+    <ol>
+        {% for title, link in links %}
+            {% if links[title] is iterable %}
+                <li>
+                    <a href="#">{{ title }}</a>
+                    <ul>
+                        {% for itemTitle, item in links[title] %}
+                            <li><a href="{{ path('documentation.showInCategory', { 'category': title | lower, 'slug': itemTitle | replace({' ': '-'}) }) }}">{{ itemTitle }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% else %}
+                <li><a href="{{ path('documentation.show', { 'slug': title | replace({' ': '-'}) }) }}">{{ title }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ol>
+
+    <a href="https://github.com/Wase-Physics/wase-physics-docs">https://github.com/Wase-Physics/wase-physics-docs</a>
+
+{% endblock %}
